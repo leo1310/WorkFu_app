@@ -1,0 +1,49 @@
+<title>
+	<%=@title=%>
+</title>
+<h1>Edit your profile</h1>
+<%= form_tag do =%>
+   <div>
+      <%=label_tag(:first_name, "First name") =%>
+      <%= text_field_tag(:first_name) %>
+   </div>
+   <p></p>
+   <div class="right lastname ">
+      <%=label_tag(:last_name, "Last name") =%>
+      <%= text_field_tag(:last_name) %>
+   </div>
+   <p></p>
+   <div>
+      <%=label_tag(:email, "E-mail") =%>
+      <%= text_field_tag(:email) %>
+   </div>
+   <p></p>
+   <div>
+      <%=label_tag(:user_name, "Username/WorkFu URL") =%>
+      <%= text_field_tag(:user_name) %>
+   </div>
+   <p></p>
+   <div>
+      <%=label_tag(:personal_url, "Personal URL") =%>
+      <%= text_field_tag(:personal_url) %>
+   </div>
+   <p></p>
+   <div>
+      <%=label_tag(:location, "Location") =%>
+      <%= text_field_tag(:location) %>
+   </div>
+   <p></p>
+   <div>
+      <%=label_tag(:micro_bio, "Micro Bio") =%>
+      <%= text_field_tag(:location) %>
+   </div>
+   <p></p>
+   <div>
+      <%=label_tag(:proffessional_bio, "Proffessional Bio") =%>
+      <%= text_field_tag(:location) %>
+   </div>
+   
+   <%= submit_tag("Update") %>
+
+<% end %>
+<p>Find me in app/views/user/home.html.erb</p>

@@ -1,0 +1,22 @@
+<h1>Find Work Opportunities.
+Discover Talent.</h1>
+<a class="info" href="/information">Give me the lowdown</a>
+<%= form_tag do %>
+  <div class="questions">
+       <h2>Are you an Individual or Group?</h2>
+       <div>
+          <input id="Group" type="radio" value="False" name="Group" checked="checked" style="display: none;">
+             <span class="styledCheck checked"></span>
+               <label>
+                 <span class="title">I'm an Individual</span>
+                 <span class="detail">eg. This account is for yourself.</span>
+               </label>
+</div>
+
+  </div>
+  <div style="margin:0;padding:0">    
+    <input name="text1" type="text1" />
+    <input name="commit" type="submit" value="Confirm" />
+  </div>
+
+<% end %>
