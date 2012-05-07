@@ -2,7 +2,7 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-body {
+/*body {
     background: none repeat scroll 0 0 #AAAAAA;;
     color: #FFFFFF;
     font-family: "museo-sans-rounded",arial,sans-serif;
@@ -683,5 +683,5 @@ section[role="main"] form > div span.loader {
     background-image: url("/content/images/ajax-loader.gif");
     background-position: 50% 50%;
     background-size: 8px 8px;
-}
+}*/
 

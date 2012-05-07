@@ -11,12 +11,12 @@
       </div>
    </div>
    <section role="main">
-      <%= form_tag do =%>
-         <div>
+<%= form_tag(:multipart=>true) do =%>
+         <div >
                <%=label_tag(:first_name, "First name") =%></br>
-              <%= text_field_tag(:first_name) %>
+              <%= text_field_tag(:first_name) %> 
          </div>   
-   <div class="right lastname ">
+   <div class="right lastname">      
       <%=label_tag(:last_name, "Last name") =%></br>
       <%= text_field_tag(:last_name) %>
    </div>   
@@ -68,6 +68,7 @@
    </div>
    
    <%= submit_tag("Update") %>
+   <% end %>
 </section>
 </body>
-<% end %>
+
