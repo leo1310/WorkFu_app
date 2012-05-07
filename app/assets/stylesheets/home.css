@@ -63,3 +63,625 @@ div label {
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
+section[role="main"] div.detail div.description {
+    float: left;
+    width: 48%;
+}
+section[role="main"] div.detail div.large-profile {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.02);
+    border: 1px solid #C5C5B9;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    float: right;
+    padding: 10px;
+    width: 48%;
+}
+section[role="main"] div.detail div.large-profile div.img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 5px solid #FFFFFF;
+    display: inline-block;
+    float: left;
+    margin: 0 10px 0 0;
+    overflow: hidden;
+    width: 75px;
+}
+div.qq-uploader {
+    margin: -2px 0 0;
+}
+section[role="main"] div.detail div.large-profile div.img img {
+    margin: 0 0 -2px;
+    width: 65px;
+}
+section[role="main"] div.detail div.large-profile div.profile-detail {
+    float: left;
+    width: 68%;
+}
+section[role="main"] div.detail div.large-profile div.profile-detail h3 {
+    color: #353535;
+    display: inline-block;
+    float: left;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 1;
+    padding: 0 0 5px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+section[role="main"] div.detail div.large-profile div.profile-detail p {
+    clear: both;
+    color: #353535;
+    display: inline-block;
+    float: left;
+    font-size: 1.3em;
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    line-height: 1.35;
+    min-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    white-space: pre-line;
+}
+section[role="main"] div.detail div.large-profile div.profile-detail a {
+    color: #20A0C1;
+    display: block;
+    font-size: 1.3em;
+    font-weight: 300;
+    padding: 1px 0 6px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    white-space: pre-line;
+}
+section[role="main"] div.detail div.large-profile div.profile-detail a:hover {
+    color: #15677C;
+}
+section[role="main"] div.detail div.description h1 {
+    color: #353535;
+    display: inline-block;
+    font-size: 3em;
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    line-height: 1.3;
+    padding: 0 0 5px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    width: 100%;
+}
+div.detail div.description p {
+    color: #353535;
+    display: inline-block;
+    font-size: 1.7em;
+    font-weight: 300;
+    letter-spacing: -0.05em;
+    line-height: 1.2;
+    padding: 0 0 10px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    width: 100%;
+}
+section[role="main"] form {
+    display: block;
+    width: 100%;
+}
+section[role="main"] form > div {
+    float: left;
+    padding: 40px 0 0;
+    position: relative;
+    width: 48%;
+}
+section[role="main"] form > div.right {
+    float: right;
+}
+section[role="main"] form > div.biography, section[role="main"] form > div.microbiography {
+    clear: both;
+    float: none;
+    margin-bottom: 20px;
+    width: 100%;
+}
+section[role="main"] form > div.questions {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.02);
+    border: 1px solid #C5C5B9;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    clear: both;
+    float: none;
+    margin: 40px 0 5px;
+    padding: 20px;
+    width: 100%;
+}
+section[role="main"] form > div.hide {
+    display: none;
+}
+section[role="main"] form > div.questions h2 {
+    clear: both;
+    color: #353535;
+    display: block;
+    float: none;
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 1.3;
+    padding: 0 0 20px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    width: 100%;
+}
+section[role="main"] form > div.questions div {
+    float: left;
+    width: 40%;
+}
+section[role="main"] form > div.questions div.right {
+    float: left;
+    width: 58%;
+}
+section[role="main"] form > div.questions div span.styledCheck, section[role="main"] form > div.questions div input {
+    float: left;
+    margin: 0 10px 0 0;
+}
+section[role="main"] form > div.questions div label {
+    float: left;
+    font-size: 100%;
+}
+section[role="main"] form > div.questions div label span.title {
+    color: #353535;
+    display: block;
+    font-size: 2em;
+    line-height: 1.3;
+    margin: 7px 0 0;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+section[role="main"] form > div.questions div label span.detail {
+    color: #353535;
+    display: block;
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.3;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+span.styledCheck {
+    background: url("/content/images/location-check.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 42px;
+    width: 42px;
+}
+span.styledCheck.checked {
+    background-position: 0 -70px;
+}
+section[role="main"] form > div.email {
+    clear: left;
+}
+section[role="main"] form > div.preview {
+    clear: both;
+    display: none;
+    width: 100%;
+}
+section[role="main"] form > div.preview label {
+    clear: both;
+    width: 100%;
+}
+section[role="main"] form > div.preview > div {
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 #FAFAF5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    clear: both;
+    max-width: 660px;
+    padding: 30px;
+}
+section[role="main"] form > div.preview > div > div {
+    border: 1px solid #FADAAF;
+    padding: 30px;
+}
+section[role="main"] form > div.preview > div > div h4 {
+    color: #353535;
+    display: block;
+    font-size: 1.8em;
+    font-weight: 500;
+    line-height: 1.2;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+section[role="main"] form > div.preview > div > div > div p {
+    color: #353535;
+    display: block;
+    font-size: 1.4em;
+    font-weight: 300;
+    line-height: 1.5;
+    padding: 10px 0 0;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+section[role="main"] form > div.preview > div > div > div a {
+    color: #FA8F0F;
+    text-decoration: underline;
+}
+section[role="main"] form > div.preview > div > div > div a:hover {
+    text-decoration: none;
+}
+section[role="main"] form > div.preview > div > div > div strong {
+    font-weight: 500;
+}
+section[role="main"] form > div.preview > div > div > div em {
+    font-style: italic;
+}
+section[role="main"] form > div.preview > div > div > div ul {
+    padding: 20px 0 5px;
+}
+section[role="main"] form > div.preview > div > div > div ul li {
+    background: url("/content/images/gold-star.png") no-repeat scroll 0 1px transparent;
+    color: #353535;
+    display: block;
+    font-size: 1.4em;
+    font-weight: 300;
+    line-height: 1.5;
+    padding: 0 0 10px 25px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+section[role="main"] form > div.preview > div > div > div ol {
+    font-weight: 500;
+    list-style-type: decimal;
+    padding: 20px 0 5px 18px;
+}
+section[role="main"] form > div.preview > div > div > div ol li {
+    color: #353535;
+    display: list-item;
+    font-size: 1.4em;
+    font-weight: 300;
+    line-height: 1.5;
+    list-style-type: decimal;
+    padding: 0 0 10px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+section[role="main"] form > div.preview > div > div > div h1, section[role="main"] form > div.preview > div > div > div h2, section[role="main"] form > div.preview > div > div > div h3, section[role="main"] form > div.preview > div > div > div h4, section[role="main"] form > div.preview > div > div > div h5, section[role="main"] form > div.preview > div > div > div h6 {
+    color: #353535;
+    display: block;
+    font-size: 1.8em;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 10px 0 0;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+section[role="main"] form > div.preview > div > div > div blockquote {
+    border-bottom: 1px solid #FADAAF;
+    border-top: 1px solid #FADAAF;
+    margin: 20px 0 10px;
+    padding: 20px 0 10px;
+}
+section[role="main"] form > div.preview > div > div > div blockquote p {
+    color: #353535;
+    font-size: 1.8em;
+    font-weight: 300;
+    line-height: 1.3;
+    padding: 0 0 10px;
+}
+section[role="main"] form > div.preview > div > div > div hr {
+    border-color: #DEDEDE -moz-use-text-color -moz-use-text-color;
+    border-style: solid none none;
+    border-width: 1px 0 0;
+    height: 1px;
+    margin: 20px 0 10px;
+}
+section[role="main"] form > div label {
+    color: #353535;
+    display: block;
+    float: left;
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 1.3;
+    padding: 0 0 8px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+section[role="main"] form > div label span {
+    color: #999999;
+    font-weight: 300;
+}
+section[role="main"] form > div textarea, section[role="main"] form > div input {
+    clear: both;
+    float: none;
+    font-family: "museo-sans-rounded",arial,sans-serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+section[role="main"] form > div input {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CFCDC4;
+    border-radius: 4px 4px 4px 4px;
+    color: #353535;
+    padding: 12px;
+    width: 100%;
+}
+section[role="main"] form > div textarea {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CFCDC4;
+    border-radius: 4px 4px 4px 4px;
+    color: #353535;
+    font-size: 2.2em;
+    height: 225px;
+    line-height: 1.3;
+    padding: 12px;
+    width: 100%;
+}
+section[role="main"] form > div.microbiography textarea {
+    height: 125px;
+}
+section[role="main"] form > div span.character-count {
+    background: none repeat scroll 0 0 white;
+    border-radius: 3px 3px 3px 3px;
+    bottom: -30px;
+    color: #999999;
+    float: none;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1;
+    padding: 5px 8px;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+}
+section[role="main"] form > div span.character-count {
+    color: #999999;
+}
+section[role="main"] form > div span.count {
+    color: #999999;
+    float: none;
+    font-size: inherit;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+section[role="main"] form > div a {
+    color: #666666;
+    font-weight: 500;
+    line-height: 0.8;
+    text-decoration: none;
+}
+section[role="main"] form > div a:hover {
+    text-decoration: underline;
+}
+section[role="main"] form > div span.total {
+    font-weight: 500;
+}
+section[role="main"] form > div span.cross, section[role="main"] form > div span.tick, section[role="main"] form > div span.loader {
+    background: url("/content/images/tick-validation.png") no-repeat scroll 0 0 transparent;
+    display: none;
+    height: 27px;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    text-indent: 26px;
+    top: 83px;
+    width: 26px;
+    z-index: 99;
+}
+section[role="main"] form > div span.cross {
+    background-image: url("/content/images/cross-validation.png");
+}
+section[role="main"] form > div span.loader {
+    background-image: url("/content/images/ajax-loader.gif");
+    background-position: 50% 50%;
+}
+section[role="main"] form > div span.field-validation-error {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid #D06A6A;
+    border-radius: 4px 4px 4px 4px;
+    color: #D06A6A;
+    display: inline-block;
+    float: left;
+    font-size: 1.3em;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: -4px 0 0 10px;
+    padding: 3px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    width: auto;
+}
+section[role="main"] form button {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+    border: 0 none;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "museo-sans-rounded",arial,sans-serif;
+    font-size: 2.3em;
+    font-weight: 300;
+    line-height: 1.3;
+    margin: 50px 0 0;
+    padding: 7px 15px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+section[role="main"] form button:hover {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.698);
+}
+section[role="main"] form button:active {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8);
+}
+.qq-upload-button {
+    background: none repeat scroll 0 0 #666666;
+    color: #FFFFFF;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 1;
+    margin: 2px 0 0;
+    padding: 4px 0;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+.qq-upload-drop-area {
+    background: none repeat scroll 0 0 #FA8F0E;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+    padding: 8px 0;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+.qq-upload-button:hover {
+    background: none repeat scroll 0 0 #323232;
+}
+.qq-upload-button:active {
+    background: none repeat scroll 0 0 #666666;
+}
+.qq-upload-list {
+    display: none;
+}
+div#uploadBlock {
+    position: relative;
+}
+div#uploadBlock div.progress {
+    background: url("/content/images/ajax-loader.gif") no-repeat scroll 50% 50% #FFFFFF;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 65px;
+}
+section[role="main"] form > div.questions div label span.title {
+    font-size: 1.8em;
+    margin: 7px 0 0;
+}
+section[role="main"] form > div.questions div label span.detail {
+    font-size: 1.3em;
+}
+section[role="main"] form > div label {
+    font-size: 1.4em;
+    padding: 0 0 3px;
+}
+section[role="main"] form > div span.field-validation-error {
+    font-size: 1.2em;
+    line-height: 1;
+    margin: -2px 0 0 4px;
+    padding: 2px 3px;
+}
+section[role="main"] form > div span.cross, section[role="main"] form > div span.tick, section[role="main"] form > div span.loader {
+    top: 76px;
+}
+section[role="main"] div.detail div.large-profile {
+    clear: both;
+    float: none;
+    width: auto;
+}
+section[role="main"] div.detail div.description {
+    clear: both;
+    float: none;
+    margin: 40px 0 0;
+    width: auto;
+}
+section[role="main"] form > div {
+    clear: both;
+    float: none;
+    padding: 40px 0 0;
+    position: relative;
+    width: auto;
+}
+section[role="main"] form > div.right {
+    clear: both;
+    float: none;
+    width: auto;
+}
+section[role="main"] form > div span.cross, section[role="main"] form > div span.tick, section[role="main"] form > div span.loader {
+    top: 63px;
+}
+section[role="main"] form > div.questions div {
+    float: none;
+    padding: 0 0 20px;
+    width: 100%;
+}
+section[role="main"] form > div.questions div.right {
+    float: none;
+    padding: 0;
+    width: 100%;
+}
+section[role="main"] form > div.questions {
+    margin: 20px 0 5px;
+    padding: 10px;
+}
+section[role="main"] form > div.questions div {
+    padding: 0 0 10px;
+}
+section[role="main"] form > div.questions h2 {
+    font-size: 1.2em;
+    padding: 0 0 10px;
+}
+section[role="main"] form > div.questions div label span.title {
+    font-size: 1.3em;
+    line-height: 1.3;
+    margin: 3px 0 0;
+}
+section[role="main"] form > div.questions div label span.detail {
+    font-size: 1.1em;
+}
+span.styledCheck {
+    background-size: 22px 56px;
+    height: 22px;
+    width: 22px;
+}
+span.styledCheck.checked {
+    background-position: 0 -35px;
+}
+span.mdprev {
+    display: none;
+}
+section[role="main"] form > div input, section[role="main"] form > div textarea {
+    font-size: 2em;
+}
+section[role="main"] form > div {
+    padding: 20px 0 0;
+}
+section[role="main"] form > div label {
+    font-size: 1.2em;
+    padding: 0 0 3px;
+}
+section[role="main"] form > div span.field-validation-error {
+    font-size: 1.1em;
+    line-height: 1;
+    margin: -3px 0 0 3px;
+    padding: 2px 3px;
+}
+section[role="main"] form > div span.cross, section[role="main"] form > div span.tick, section[role="main"] form > div span.loader {
+    top: 52px;
+}
+section[role="main"] form > div span.character-count {
+    display: block;
+    left: 0;
+    width: 100%;
+}
+section[role="main"] form > div.biography, section[role="main"] form > div.microbiography {
+    margin-bottom: 40px;
+}
+section[role="main"] form button {
+    margin: 30px 0 0;
+}
+section[role="main"] div.detail div.description {
+    margin: 20px 0 0;
+}
+section[role="main"] div.detail div.description h1 {
+    font-size: 2em;
+}
+div.detail div.description p {
+    font-size: 1.5em;
+}
+section[role="main"] div.detail div.large-profile div.profile-detail h3 {
+    font-size: 1.5em;
+}
+section[role="main"] div.detail div.large-profile div.profile-detail p {
+    font-size: 1.2em;
+}
+section[role="main"] div.detail div.large-profile div.profile-detail a {
+    font-size: 1.2em;
+}
+section[role="main"] form > div span.tick {
+    background-image: url("/content/images/retina/tick-validation.png");
+    background-size: 26px 29px;
+}
+section[role="main"] form > div span.cross {
+    background-image: url("/content/images/retina/cross-validation.png");
+    background-size: 26px 29px;
+}
+section[role="main"] form > div span.loader {
+    background-image: url("/content/images/ajax-loader.gif");
+    background-position: 50% 50%;
+    background-size: 8px 8px;
+}
+
