@@ -1,16 +1,17 @@
 WorkFu::Application.routes.draw do
   #get "users/register_form"
-  match "/create_manage", :to=>'users#create_manage'
-  match "/messages", :to=>'users#messages'
-  match "/settings", :to=>'users#settings'
-  match "/your_applications", :to=>'users#your_applications'
-  match "/your_profille", :to=>'users#your_profille'
-  match "/update_your_bio", :to=>'users#update_your_bio'
+  match "/create_manage", :to=>'pages#create_manage'
+  match "/messages", :to=>'pages#messages'
+  match "/settings", :to=>'pages#settings'
+  match "/your_applications", :to=>'pages#your_applications'
+  match "/your_profille", :to=>'pages#your_profille'
+  #match "/update_your_bio", :to=>'pages#update_your_bio'
+  match "/opportunities", :to=>'pages#opportunities'
   
   
 
-  
-  root :to=> "users#register_form"
+  root :to=> "pages#home"
+  #root :to=> "users#register_form"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

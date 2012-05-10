@@ -1,0 +1,74 @@
+
+<title>
+	<%=@title=%>
+   <%= stylesheet_link_tag 'home', :media => 'screen' %>
+</title>
+<body>
+   <div>
+      <div class="description">
+            <h1>Edit your profile</h1>
+            <p>Use the form below to edit and manage your personal details.</p>
+      </div>
+   </div>
+   <section role="main">
+<%= form_tag(:multipart=>true) do =%>
+         <div >
+               <%=label_tag(:first_name, "First name") =%></br>
+              <%= text_field_tag(:first_name) %> 
+         </div>   
+   <div class="right lastname">      
+      <%=label_tag(:last_name, "Last name") =%></br>
+      <%= text_field_tag(:last_name) %>
+   </div>   
+   <div class="email">
+      <%=label_tag(:email, "E-mail") =%></br>
+      <%= text_field_tag(:email) %>
+   </div>   
+   <div class="right">
+      <%=label_tag(:user_name, "Username/WorkFu URL") =%></br>
+      <%= text_field_tag(:user_name) %>
+   </div>
+   
+   <div>
+      <%=label_tag(:personal_url, "Personal URL") =%></br>
+      <%= text_field_tag(:personal_url) %>
+   </div>
+   
+   <div class="right">
+      <%=label_tag(:location, "Location") =%></br>
+      <%= text_field_tag(:location) %>
+   </div>
+   
+   <div class="microbiography">
+      
+      <%=label_tag(:micro_bio, "Micro Bio") =%><span>(Achievements / Current position)</span></br>
+      <%= text_area_tag(:micro_bio) %>
+      <!--<span class="character-count">
+         Used
+         <span class="count">0</span>
+         /
+         <span class="total">160</span>
+         characters. No HTML allowed.
+      </span>-->
+   </div>
+   
+   <div class="biography">
+      
+      <%=label_tag(:proffessional_bio, "Proffessional Bio") =%></br>
+      <%= text_area_tag "proffessional_bio", nil %>
+      <!--<span class="character-count">
+         Used
+         <span class="count">3</span>
+         /
+         <span class="total">200</span>
+         words. We allow
+         <a title="View details" target="_blank" href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>
+         <span class="mdprev"> (edit for preview)</span>.
+      </span>-->
+   </div>
+   
+   <%= submit_tag("Update") %>
+   <% end %>
+</section>
+</body>
+

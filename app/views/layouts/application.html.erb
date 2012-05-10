@@ -6,7 +6,7 @@
          <%= stylesheet_link_tag 'application', :media => 'all' %>
          <%= javascript_include_tag 'applicattion' %>     
 </head>
-<body style="padding: 100px">	
+<body >	
 	     <header> 
        <div class="navbar">
            <div class="navbar-inner">
@@ -14,15 +14,15 @@
                
                    <ul class="nav nav-pills pull-left">                                   
                        <li><a href="http://workfu.com/", title="Workfu", alt="Workfu"><%= image_tag("workfu_logo.png", :alt => "WorkFu", :class => "round") %></a></li>  
-                       <li class="active"><%= link_to "Opportunities", '#' %></li>            
-                       <li ><%= link_to "Create/Manage", '#' %></li>
-                       <li ><%= link_to "Your Applications", '#' %></li>                       
+                       <li class="active"><%= link_to "Opportunities", opportunities_path %></li>            
+                       <li ><%= link_to "Create/Manage", create_manage_path %></li>
+                       <li ><%= link_to "Your Applications", your_applications_path %></li>                       
                    </ul>
                        
                    <ul class="nav nav-pills pull-right">  
-                       <li ><%= link_to "Your Profile", '#' %></li>
-                       <li ><%= link_to "Messages", '#' %></li>            
-                       <li ><%= link_to "Settings", '#' %></li>
+                       <li ><%= link_to "Your Profile", your_profille_path %></li>
+                       <li ><%= link_to "Messages", messages_path %></li>            
+                       <li ><%= link_to "Settings", settings_path %></li>
                        <li ><%= link_to "Loguot", '#' %></li>
                    </ul>
                </div>
