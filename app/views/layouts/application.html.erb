@@ -2,16 +2,52 @@
 <html>
 <head>
   <title><%=@title%></title>
-  <%= csrf_meta_tags %>
-  <%= render 'layouts/stylesheets' %>
+         <%= csrf_meta_tags %>
+         <%= stylesheet_link_tag 'application', :media => 'all' %>
+         <%= javascript_include_tag 'applicattion' %>     
 </head>
-<body>
-	<div class="container">
-	     <%= render 'layouts/header' %>
-         <section class="round">
+<body style="padding: 100px">	
+	     <header> 
+       <div class="navbar">
+           <div class="navbar-inner">
+               <div class="container">
+               
+                   <ul class="nav nav-pills pull-left">                                   
+                       <li><a href="http://workfu.com/", title="Workfu", alt="Workfu"><%= image_tag("workfu_logo.png", :alt => "WorkFu", :class => "round") %></a></li>  
+                       <li class="active"><%= link_to "Opportunities", '#' %></li>            
+                       <li ><%= link_to "Create/Manage", '#' %></li>
+                       <li ><%= link_to "Your Applications", '#' %></li>                       
+                   </ul>
+                       
+                   <ul class="nav nav-pills pull-right">  
+                       <li ><%= link_to "Your Profile", '#' %></li>
+                       <li ><%= link_to "Messages", '#' %></li>            
+                       <li ><%= link_to "Settings", '#' %></li>
+                       <li ><%= link_to "Loguot", '#' %></li>
+                   </ul>
+               </div>
+           </div>              
+       </div>   
+       </header>
+       <section>
+         <div class="container">
             <%= yield %>
-         </section>
-         <%= render 'layouts/footer' %>
-    <div/>
+         <div/>
+       </section>
+         <footer>
+         <div class="container">            
+              <ul>  
+                <li>Follow us on <a href="http://twitter.com/">Twitter</a> & Like us on <a href="http://facebook.com/">Facebook</a>. </li>
+              </ul>       
+              <ul orientation="horizontal" >      
+                 <li><%= link_to "Information", '#' %>.</li>       
+                 <li><%= link_to "FAQ's", '#' %>.</li>
+                 <li><%= link_to "Blog", '#' %>.</li>
+                 <li><%= link_to "Terms", '#' %>.</li>
+                 <li><%= link_to "Privacy", :controller => "home#index" %></li>                 
+              </ul>   
+                
+         </footer>        
+       </div>
 </body>
 </html>
