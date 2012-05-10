@@ -5,7 +5,7 @@ WorkFu::Application.routes.draw do
   match "/settings", :to=>'pages#settings'
   match "/your_applications", :to=>'pages#your_applications'
   match "/your_profille", :to=>'pages#your_profille'
-  #match "/update_your_bio", :to=>'pages#update_your_bio'
+  match "/update_your_bio", :to=>'pages#update_your_bio'
   match "/opportunities", :to=>'pages#opportunities'
   
   

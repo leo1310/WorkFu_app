@@ -2,13 +2,21 @@
 <html>
 <head>
   <title><%=@title%></title>
-  <%= csrf_meta_tags %>  
-</head>
+  <%= csrf_meta_tags %>
+         <%= stylesheet_link_tag 'application', :media => 'all' %>
+         <%= javascript_include_tag 'applicattion' %>      
+  </head>
 <body>
-	<div class="container">	     
+	<header>
+	<div class="container">
+		
+	<div/>	
+    </header>
          <section class="round">
             <%= yield %>
          </section>         
-    <div/>
+    <footer>
+    	<%= yield %>
+    </footer>
 </body>
 </html>

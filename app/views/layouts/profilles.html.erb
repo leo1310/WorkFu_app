@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%=@title%></title>
+         <%= csrf_meta_tags %>
+         <%= stylesheet_link_tag 'application', :media => 'all' %>
+         <%= javascript_include_tag 'applicattion' %>     
+</head>
+<body>
+	<header>
+	     <div class="container">
+             <ul class="nav nav-pills">                        
+                 <li class="active"><%= link_to "Update your Bio", update_your_bio_path %></li>
+                 <li><%= link_to "Refine your Keywords", '#' %></li>
+                 <li><%= link_to "Add other networks", '#' %></li>
+                 <li><%= link_to "Reading List", '#' %></li>            
+                 <li><%= link_to "Preview yoyr Profile", '#' %></li>
+             </ul>
+         </div>
+   </header>
+</body>
