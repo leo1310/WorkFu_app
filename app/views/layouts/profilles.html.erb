@@ -10,12 +10,32 @@
 	<header>
        
 	     <div class="container">
-             <ul class="nav nav-pills">                        
-                 <li class="active"><%= link_to "Update your Bio", update_your_bio_path %></li>
-                 <li><%= link_to "Refine your Keywords", refine_your_keywords_path %></li>
-                 <li><%= link_to "Add other networks", add_other_networks_path %></li>
-                 <li><%= link_to "Reading List", reading_list_path %></li>            
-                 <li><%= link_to "Preview your Profille", preview_your_profille_path %></li>
+             <ul class="nav nav-pills"> 
+                 <% if session[:second_tab] == 1 %>                       
+                      <li class="active"><%= link_to "Update your Bio", update_your_bio_path %></li>
+                 <%else%>
+                     <li><%= link_to "Update your Bio", update_your_bio_path %></li>     
+                 <%end%>
+                 <% if session[:second_tab] == 2 %>                       
+                     <li class="active"><%= link_to "Refine your Keywords", refine_your_keywords_path %></li>
+                 <%else%>
+                     <li><%= link_to "Refine your Keywords", refine_your_keywords_path %></li>
+                 <%end%>
+                 <% if session[:second_tab] == 3 %>                       
+                     <li class="active"><%= link_to "Add other networks", add_other_networks_path %></li>
+                 <%else%>
+                     <li><%= link_to "Add other networks", add_other_networks_path %></li>
+                 <%end%>
+                 <% if session[:second_tab] == 4 %>                       
+                     <li class="active"><%= link_to "Reading List", reading_list_path %></li>
+                 <%else%>            
+                     <li><%= link_to "Reading List", reading_list_path %></li>
+                <%end%>
+                 <% if session[:second_tab] == 5 %>                       
+                     <li class="active"><%= link_to "Preview your Profille", preview_your_profille_path %></li>
+                 <%else%>
+                     <li><%= link_to "Preview your Profille", preview_your_profille_path %></li>
+                <%end%>
              </ul>
          </div>
          <%= yield %>

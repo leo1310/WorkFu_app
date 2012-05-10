@@ -11,10 +11,11 @@ WorkFu::Application.routes.draw do
   #get "users/register_form"
 
   match "/create_manage", :to=>'pages#create_manage'
+  match "/your_profile", :to => 'navigatebars#update_your_bio'
   match "/messages", :to=>'pages#messages'
   match "/settings", :to=>'pages#settings'
   match "/your_applications", :to=>'pages#your_applications'
-  match "/your_profille", :to=>'pages#your_profille'
+  #match "/your_profille", :to=>'pages#your_profille'
   match "/update_your_bio", :to=>'pages#update_your_bio'
   match "/opportunities", :to=>'pages#opportunities'
   

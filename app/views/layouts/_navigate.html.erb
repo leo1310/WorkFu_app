@@ -24,9 +24,9 @@
                        
                    <ul class="nav nav-pills pull-right">
                        <% if session[:right_tab] == 1 %>                      
-                          <li class="active"><%= link_to "Your Profile", navigatebars_path %></li> 
+                          <li class="active"><%= link_to "Your Profile", your_profile_path %></li> 
                        <%else%>
-                          <li><%= link_to "Your Profile", navigatebars_path %></li> 
+                          <li><%= link_to "Your Profile", your_profile_path %></li> 
                        <%end%> 
                         <% if session[:right_tab] == 2 %>
                           <li class="active"><%= link_to "Messages", messages_path %></li> 

@@ -24,12 +24,11 @@ class PagesController < ApplicationController
     session[:right_tab] = 6
     @title = "Opportunities"
   end
-  def your_profille    
-    @title = "Your Profille"
-  end 
+
 
   def home
     @title = "Home"
+    session[:right_tab] = 0
   end
 
 end
