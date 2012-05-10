@@ -1,5 +1,15 @@
 WorkFu::Application.routes.draw do
+  get "users/new"
+  resource :navigatebars
+
+  match "/update_your_bio", :to=>'navigatebars#update_your_bio'
+  match "/refine_your_keywords", :to=>'navigatebars#refine_your_keywords'
+  match "/add_other_networks", :to=>'navigatebars#add_other_networks'
+  match "/reading_list", :to=>'navigatebars#reading_list'
+  match "/preview_your_profille", :to=>'navigatebars#preview_your_profille'
+
   #get "users/register_form"
+
   match "/create_manage", :to=>'pages#create_manage'
   match "/messages", :to=>'pages#messages'
   match "/settings", :to=>'pages#settings'

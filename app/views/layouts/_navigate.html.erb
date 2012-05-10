@@ -1,0 +1,46 @@
+<header> 
+       <div class="navbar">
+           <div class="navbar-inner">
+               <div class="container">
+               
+                   <ul class="nav nav-pills pull-left">                                   
+                       <li><a href="http://workfu.com/", title="Workfu", alt="Workfu"><%= image_tag("workfu_logo.png", :alt => "WorkFu", :class => "round") %></a></li>  
+                       <% if session[:right_tab] == 6 %>    
+                          <li class="active"><%= link_to "Opportunities", opportunities_path %></li>
+                       <%else%>            
+                          <li ><%= link_to "Opportunities", opportunities_path %></li>
+                       <%end%>   
+                       <% if session[:right_tab] == 5 %>    
+                          <li class="active"><%= link_to "Create/Manage", create_manage_path %></li>
+                       <%else%>   
+                          <li ><%= link_to "Create/Manage", create_manage_path %></li>
+                       <%end%>
+                       <% if session[:right_tab] == 4 %>       
+                          <li class="active"><%= link_to "Your Applications", your_applications_path %></li>
+                       <%else%>                       
+                          <li ><%= link_to "Your Applications", your_applications_path %></li>
+                       <%end%>
+                   </ul>
+                       
+                   <ul class="nav nav-pills pull-right">
+                       <% if session[:right_tab] == 1 %>                      
+                          <li class="active"><%= link_to "Your Profile", navigatebars_path %></li> 
+                       <%else%>
+                          <li><%= link_to "Your Profile", navigatebars_path %></li> 
+                       <%end%> 
+                        <% if session[:right_tab] == 2 %>
+                          <li class="active"><%= link_to "Messages", messages_path %></li> 
+                        <%else%>
+                           <li ><%= link_to "Messages", messages_path %></li>     
+                        <%end%>
+                        <% if session[:right_tab] == 3 %>      
+                           <li class="active"><%= link_to "Settings", settings_path %></li>
+                        <%else%>
+                           <li ><%= link_to "Settings", settings_path %></li>
+                        <%end%>
+                           <li ><%= link_to "Loguot", '#' %></li>
+                   </ul>
+               </div>
+           </div>              
+       </div>   
+       </header>

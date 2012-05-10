@@ -1,14 +1,14 @@
 <footer>
-  <nav class="round">
-    <ul>  
-      <li>Follow us on <a href="http://twitter.com/">Twitter</a> & Like us on <a href="http://facebook.com/">Facebook</a>. </li>
-     </ul>       
-    <ul>    	
-      <li><%= link_to "Information", '#' %>.</li>       
-      <li><%= link_to "FAQ's", '#' %>.</li>
-      <li><%= link_to "Blog", '#' %>.</li>
-      <li><%= link_to "Terms", '#' %>.</li>
-      <li><%= link_to "Privacy", '#' %>.</li>
-    </ul>
-  </nav>
-</footer>
+         <div class="container">            
+              <ul>  
+                <li>Follow us on <a href="http://twitter.com/">Twitter</a> & Like us on <a href="http://facebook.com/">Facebook</a>. </li>
+              </ul>       
+              <ul orientation="horizontal" >      
+                 <li><%= link_to "Information", '#' %>.</li>       
+                 <li><%= link_to "FAQ's", '#' %>.</li>
+                 <li><%= link_to "Blog", '#' %>.</li>
+                 <li><%= link_to "Terms", '#' %>.</li>
+                 <li><%= link_to "Privacy", :controller => "home#index" %>.</li>                 
+              </ul>   
+                
+         </footer>  
