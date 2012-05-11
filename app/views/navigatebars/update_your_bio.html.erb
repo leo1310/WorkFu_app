@@ -1,3 +1,62 @@
-<%= render 'layouts/navigate'%>
-<h1>Hello world dfdfb</h1>
+<title>
+	<%=@title=%>    
+</title>
+<body class="hero-unit">	
+	<%= render 'layouts/navigate'%>
+	<div class="row">
+		<div class="span6">
+			
+
+    <div>
+       <div >
+            <h1>Edit your profile</h1>
+            <p>Use the form below to edit and manage your personal details.</p>
+       </div>
+   </div>
+   <section >
+   <%= form_tag(:multipart=>true) do =%>
+         <div >
+              <%=label_tag(:first_name, "First name") =%>
+              <%= text_field_tag(:first_name) %> 
+         </div>   
+         <div >      
+              <%=label_tag(:last_name, "Last name") =%>
+              <%= text_field_tag(:last_name) %>
+         </div>   
+         <div>
+              <%=label_tag(:email, "E-mail") =%>
+              <%= text_field_tag(:email) %>
+         </div>   
+         <div>
+              <%=label_tag(:user_name, "Username/WorkFu URL") =%>
+              <%= text_field_tag(:user_name) %>
+         </div>
+   
+         <div>
+              <%=label_tag(:personal_url, "Personal URL") =%>
+              <%= text_field_tag(:personal_url) %>
+         </div>
+   
+         <div>
+              <%=label_tag(:location, "Location") =%>
+              <%= text_field_tag(:location) %>
+         </div>
+   
+         <div >      
+              <%=label_tag(:micro_bio, "Micro Bio") =%>
+              <%= text_area_tag(:micro_bio) %>   
+         </div>
+   
+         <div >
+              <%=label_tag(:proffessional_bio, "Proffessional Bio") =%>
+              <%= text_area_tag "proffessional_bio", nil %>    
+         </div>   
+              <%= submit_tag("Update") %>
+   <% end %>
+</section>
+<div class="span6">
+</div>
+</div>
+</div>
 <%= render 'layouts/footer'%>
+</body>
