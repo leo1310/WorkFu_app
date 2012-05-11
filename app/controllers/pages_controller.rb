@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
-  def index
-    
-  end  
+  
 
   def register_form
     @title = "Registration"

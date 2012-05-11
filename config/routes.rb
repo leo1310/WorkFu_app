@@ -15,14 +15,13 @@ WorkFu::Application.routes.draw do
   match "/messages", :to=>'pages#messages'
   match "/settings", :to=>'pages#settings'
   match "/your_applications", :to=>'pages#your_applications'
+  #match "/your_profille", :to=>'pages#your_profille'
   match "/update_your_bio", :to=>'pages#update_your_bio'
   match "/opportunities", :to=>'pages#opportunities'
-  #match "auth/twitter", :to=>'https://api.twitter.com/oauth/authorize'
+  
+  
 
-  match "/auth/:povider/callback" => "sessions#create"
-  match "/signout" => "ssesions#destroy"
-
-  root :to=> "pages#index"
+  root :to=> "pages#home"
   #root :to=> "users#register_form"
 
   # The priority is based upon order of creation:
