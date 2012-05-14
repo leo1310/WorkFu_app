@@ -4,17 +4,15 @@
                <div class="container">
                
                    <ul class="nav nav-pills pull-left">                                   
-                       <li><a href="http://twitter.com/", title="Workfu", alt="Workfu"><%= image_tag("twitter_logo_right.png", :alt => "WorkFu", :class => "round") %></a></li>      
+                       <li><a href="http://twitter.com/", title="twitter", alt="twitter"><%= image_tag("twitter_logo_right.png", :alt => "twitter", :class => "round") %></a></li>      
                    </ul>
                        
-                   <ul class="nav nav-pills pull-right">   
-                   <% if current_user%>
-                          Welcome <%=current_user.name%>                               
-                          <li ><%= link_to "Sign out", signout_path %></li> 
-                   <%else%>
-                          <li ><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>     
+                   <ul class="nav nav-pills pull-right">                              
+                   
+                          <li ><%= link_to "Sign in", "#" %></li>  
+                   
                    </ul>
                </div>
            </div>              
        </div>   
-       </header>
+  </header>

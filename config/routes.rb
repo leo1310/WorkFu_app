@@ -1,5 +1,6 @@
 WorkFu::Application.routes.draw do
   get "users/new"
+  root :to=> "pages#index"
   resource :navigatebars
 
   match "/update_your_bio", :to=>'navigatebars#update_your_bio'
@@ -22,7 +23,7 @@ WorkFu::Application.routes.draw do
   match "/auth/:povider/callback" => "sessions#create"
   match "/signout" => "ssesions#destroy"
 
-  root :to=> "pages#index"
+  
   #root :to=> "users#register_form"
 
   # The priority is based upon order of creation:
