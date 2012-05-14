@@ -6,8 +6,12 @@
          <%= stylesheet_link_tag 'application', :media => 'all' %>
          <%= javascript_include_tag 'applicattion' %>     
 </head>
-<body >	
+<body >
+<% if user_signed_in?%>	
 	     <%= render 'layouts/navigate'%>       
+<%else%>
+  <%= render 'layouts/navigation_index'%>
+  <%end%>
        <section>
          <div class="container">
             <%= yield %>

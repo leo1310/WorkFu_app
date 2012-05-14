@@ -2,6 +2,8 @@ WorkFu::Application.routes.draw do
   devise_for :users, :path => "usuarios", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   devise_scope :user do
   get "sign_in", :to => "devise/sessions#new"
+  match "/logout" => "devise/sessions#destroy"
+
 end
 
   #get "users/new"
