@@ -1,5 +1,6 @@
 class NavigatebarsController < ApplicationController
-	layout "profilles"
+	before_filter :authenticate_user!
+  layout "profilles"
 
 	def index 
 		

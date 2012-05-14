@@ -1,5 +1,10 @@
 WorkFu::Application.routes.draw do
-  get "users/new"
+  devise_for :users, :path => "usuarios", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
+  devise_scope :user do
+  get "sign_in", :to => "devise/sessions#new"
+end
+
+  #get "users/new"
   root :to=> "pages#index"
   resource :navigatebars
 
@@ -9,22 +14,14 @@ WorkFu::Application.routes.draw do
   match "/reading_list", :to=>'navigatebars#reading_list'
   match "/preview_your_profille", :to=>'navigatebars#preview_your_profille'
 
-  #get "users/register_form"
-
   match "/create_manage", :to=>'pages#create_manage'
   match "/your_profile", :to => 'navigatebars#update_your_bio'
   match "/messages", :to=>'pages#messages'
   match "/settings", :to=>'pages#settings'
   match "/your_applications", :to=>'pages#your_applications'
   match "/update_your_bio", :to=>'pages#update_your_bio'
-  match "/opportunities", :to=>'pages#opportunities'
-  #match "auth/twitter", :to=>'https://api.twitter.com/oauth/authorize'
+  match "/opportunities", :to=>'pages#opportunities'  
 
-  match "/auth/:povider/callback" => "sessions#create"
-  match "/signout" => "ssesions#destroy"
-
-  
-  #root :to=> "users#register_form"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
