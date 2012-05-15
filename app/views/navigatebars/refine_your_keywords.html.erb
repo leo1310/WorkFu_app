@@ -24,7 +24,7 @@
           <% current_user.keywords.each do |keyword|%>
 
           <li><a class="close"><%= keyword.keyword %>&times;</a></li>
-
+<li><%= link_to "x", keyword, :method=>:delete, :confirm=>"Are you sure?"%></li>
           <%end%>
 
     </ul>

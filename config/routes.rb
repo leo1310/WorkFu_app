@@ -2,7 +2,7 @@ WorkFu::Application.routes.draw do
   devise_for :users, :path => "usuarios", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   devise_scope :user do
   get "sign_in", :to => "devise/sessions#new"
-  match "/logout" => "devise/sessions#destroy"
+  match "/logout" => "devise/sessions#destroy"  
   resources :keywords
 end
 
@@ -10,12 +10,12 @@ end
   
   root :to=> "pages#index"
   resource :navigatebars  
-  resource :keywords
+  
   
   resources :user do
     resources :keywords
   end
-  #match "user_keywords", :to=> 'keywords'
+  
   match "/refine_your_keywords", :to=>'navigatebars#refine_your_keywords'
   match "/add_other_networks", :to=>'navigatebars#add_other_networks'
   match "/reading_list", :to=>'navigatebars#reading_list'

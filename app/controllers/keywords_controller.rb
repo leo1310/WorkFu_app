@@ -20,4 +20,10 @@ class KeywordsController < ApplicationController
 
 		redirect_to :controller => "navigatebars", :action => "refine_your_keywords"
 	end
+
+	#def show
+	#	puts "xxxxx xxxx xxxxx"
+	#	puts "destroy"
+	#	redirect_to :controller => "navigatebars", :action => "refine_your_keywords"
+	#end
 end
