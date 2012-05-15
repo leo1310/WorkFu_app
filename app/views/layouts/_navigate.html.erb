@@ -4,7 +4,7 @@
                <div class="container">
                
                    <ul class="nav nav-pills pull-left">                                   
-                       <li><a href="http://workfu.com/", title="Workfu", alt="Workfu"><%= image_tag("workfu_logo.png", :alt => "WorkFu", :class => "round") %></a></li>  
+                       <li><a href="/index", title="Workfu", alt="Workfu"><%= image_tag("workfu_logo.png", :alt => "WorkFu", :class => "round") %></a></li>  
                        <% if session[:right_tab] == 6 %>    
                           <li class="active"><%= link_to "Opportunities", opportunities_path %></li>
                        <%else%>            
@@ -38,7 +38,7 @@
                         <%else%>
                            <li ><%= link_to "Settings", settings_path %></li>
                         <%end%>
-                           <li ><%= link_to "Logout111", logout_path%></li>
+                           <li ><%= link_to "Logout", logout_path%></li>
                    </ul>
                </div>
            </div>              

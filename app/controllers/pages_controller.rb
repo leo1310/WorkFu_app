@@ -1,7 +1,12 @@
 class PagesController < ApplicationController
   before_filter :authenticate_user!
   def index
-    
+    @user = User.first
+    a = @user.keywords.first
+    #@k = @user.keywords.build
+    #@k.keyword = "kkk"
+    #@k.save
+
   end  
 
   def register_form

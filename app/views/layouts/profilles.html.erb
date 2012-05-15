@@ -12,9 +12,9 @@
 	     <div class="container">
              <ul class="nav nav-pills"> 
                  <% if session[:second_tab] == 1 %>                       
-                      <li class="active"><%= link_to "Update your Bio", update_your_bio_path %></li>
+                      <li class="active"><%= link_to "Update your Bio", your_profile_path %></li>
                  <%else%>
-                     <li><%= link_to "Update your Bio", update_your_bio_path %></li>     
+                     <li><%= link_to "Update your Bio", your_profile_path %></li>     
                  <%end%>
                  <% if session[:second_tab] == 2 %>                       
                      <li class="active"><%= link_to "Refine your Keywords", refine_your_keywords_path %></li>

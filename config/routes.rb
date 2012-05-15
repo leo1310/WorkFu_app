@@ -3,28 +3,28 @@ WorkFu::Application.routes.draw do
   devise_scope :user do
   get "sign_in", :to => "devise/sessions#new"
   match "/logout" => "devise/sessions#destroy"
-
 end
 
-  #get "users/new"
+  
+  
   root :to=> "pages#index"
-  resource :navigatebars
+  resource :navigatebars  
+  resource :keywords
 
-  match "/update_your_bio", :to=>'navigatebars#update_your_bio'
   match "/refine_your_keywords", :to=>'navigatebars#refine_your_keywords'
   match "/add_other_networks", :to=>'navigatebars#add_other_networks'
   match "/reading_list", :to=>'navigatebars#reading_list'
   match "/preview_your_profille", :to=>'navigatebars#preview_your_profille'
-
-  match "/create_manage", :to=>'pages#create_manage'
   match "/your_profile", :to => 'navigatebars#update_your_bio'
+  
+  match "index", :to=> 'pages#index'
+  match "/create_manage", :to=>'pages#create_manage'  
   match "/messages", :to=>'pages#messages'
   match "/settings", :to=>'pages#settings'
   match "/your_applications", :to=>'pages#your_applications'
-  match "/update_your_bio", :to=>'pages#update_your_bio'
   match "/opportunities", :to=>'pages#opportunities'  
 
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
