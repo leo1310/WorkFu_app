@@ -1,16 +1,23 @@
 class KeywordsController < ApplicationController
 	def index
 	    
+		
 	end
 	
-	def create
-		@User = User.find(params[:id])
-		"helllo"
-		User.keyword.create(params[:keyword])
-		@User.save
+	def create		
+		@user = User.find(params[:user_id])			
+		@user.keywords.create(params[:keyword])
+		@user.save
+
+		redirect_to :controller => "navigatebars", :action => "refine_your_keywords"
 	end
 
 	def destroy
-		@User = User.find(params[:id])
+		puts "xxxxx xxxx xxxxx"
+		puts "destroy"
+		@keyword = Keyword.find(params[:id])
+		@keyword.destroy
+
+		redirect_to :controller => "navigatebars", :action => "refine_your_keywords"
 	end
 end

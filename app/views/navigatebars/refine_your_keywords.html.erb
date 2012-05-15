@@ -5,7 +5,7 @@
 	<h1>Your keywords</h1>
 	<p>The following are keywords that best represent your expertise, interests & skill-set. You can add or delete as you please, hold & drag to update the order and importance of your keywords.</p>
 <%if current_user.keywords.count <= 20%>
-      <%= form_for keywords_path do |f| %>
+      <%= form_for [current_user, Keyword.new] do |f| %>
          <div >	
 	       <%=f.text_field :keyword, :class=>"input-xlarge"%>
 	       <%=current_user.keywords.count%>/20
@@ -19,11 +19,14 @@
 	Attention! The keywords is to match!    
 </div>
 <%end%>
-<ul class="nav nav-pills pull-right">
-    <li><a href="#">Home</a>
-    </li>
-    <li><a href="#">Page1</a></li>
-    <li><a href="#">Page2</a></li>
+<ul class="nav nav-pills">
+
+          <% current_user.keywords.each do |keyword|%>
+
+          <li><a class="close"><%= keyword.keyword %>&times;</a></li>
+
+          <%end%>
+
     </ul>
 </div>
 </div>

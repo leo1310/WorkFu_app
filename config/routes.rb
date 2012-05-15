@@ -3,6 +3,7 @@ WorkFu::Application.routes.draw do
   devise_scope :user do
   get "sign_in", :to => "devise/sessions#new"
   match "/logout" => "devise/sessions#destroy"
+  resources :keywords
 end
 
   
@@ -10,7 +11,11 @@ end
   root :to=> "pages#index"
   resource :navigatebars  
   resource :keywords
-
+  
+  resources :user do
+    resources :keywords
+  end
+  #match "user_keywords", :to=> 'keywords'
   match "/refine_your_keywords", :to=>'navigatebars#refine_your_keywords'
   match "/add_other_networks", :to=>'navigatebars#add_other_networks'
   match "/reading_list", :to=>'navigatebars#reading_list'
