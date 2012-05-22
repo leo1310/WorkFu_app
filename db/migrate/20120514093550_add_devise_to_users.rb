@@ -1,5 +1,5 @@
 class AddDeviseToUsers < ActiveRecord::Migration
-  def self.up
+  def change
     create_table(:users) do |t|
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
@@ -19,9 +19,9 @@ class AddDeviseToUsers < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
 
-      ## Encryptable
+      ## Encryptable      
       # t.string :password_salt
-
+      
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at

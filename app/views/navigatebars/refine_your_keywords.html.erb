@@ -23,10 +23,14 @@
 
           <% current_user.keywords.each do |keyword|%>
 
-          <li><a class="close"><%= keyword.keyword %>&times;</a></li>
-<li><%= link_to "x", keyword, :method=>:delete, :confirm=>"Are you sure?"%></li>
+          <li><a class="close"><%= keyword.keyword %></a>
+            <%= link_to "x", keyword, :method=>:delete, :confirm=>"Are you sure?"%>
+          </li>
           <%end%>
 
+    </ul>
+    <ul class="nav nav-pills">
+      <li><a class="close">Sports</a></li><li><%= link_to "||", [current_user, Keyword.new], :confirm=>"Are you sure?"%></li>
     </ul>
 </div>
 </div>

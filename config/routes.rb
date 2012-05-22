@@ -7,15 +7,21 @@ WorkFu::Application.routes.draw do
 end
 
   
-  
+  resources :navigatebars  
   root :to=> "pages#index"
-  resource :navigatebars  
+  
   
   
   resources :user do
     resources :keywords
   end
   
+  match "ajax", :to=>'pages#ajax'
+  match "movie_new", :to=>'pages#movie_new', :via  => "post"
+  match "ajax_movie_new", :to=>'pages#ajax_movie_new', :via  => "post"
+
+  #match "/update_your_bio", :to => 'pages#update', :via => "post"
+
   match "/refine_your_keywords", :to=>'navigatebars#refine_your_keywords'
   match "/add_other_networks", :to=>'navigatebars#add_other_networks'
   match "/reading_list", :to=>'navigatebars#reading_list'

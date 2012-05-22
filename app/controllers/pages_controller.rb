@@ -38,5 +38,27 @@ class PagesController < ApplicationController
     @title = "Home"
     session[:right_tab] = 0
   end
+ 
+ def update
+   puts params
+ end 
+
+ def ajax
+ @movies = Movie.all   
+ end
+
+ def movie_new
+  @movie = Movie.create(params[:movie])
+   respond_to do |format|
+      format.html do
+        redirect_to :action => "ajax"
+      end  
+     
+      format.js do 
+        @movies = Movie.all  
+      end 
+    end 
+
+ end
 
 end

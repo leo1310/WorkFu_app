@@ -3,60 +3,93 @@
 </title>
 <body class="hero-unit">	
 	<%= render 'layouts/navigate'%>
-	<div class="row">
-		<div class="span6">
-			
-
-    <div>
+	<div class="row-fluid">  
+		<div class="span6">			
        <div >
             <h1>Edit your profile</h1>
             <p>Use the form below to edit and manage your personal details.</p>
-       </div>
-   </div>
+       </div>   
    <section >
-   <%= form_tag(:multipart=>true) do =%>
+   <%= form_for @user, :url => {:action => "update", :id => current_user.id } do |f|  %>
+          <table border="3px">
+            <tr>
+              <td>
+                 <div >
+                     <p>Are you an Individual or Group?</p>    
+                     <%= f.radio_button(:group_individual, "I'm an Individual") %>
+                     <%= f.label(:individual, "I'm an Individual") %>
+                     <%= f.radio_button(:group_individual, "I'm a Group") %>
+                     <%= f.label(:group, "I'm a Group") %>            
+                 </div>
+              </td>
+            </tr>
+          </table>
+          <table border="3px">
+            <tr>
+              <td>
+                 <div>
+                     <p>How would you like to use WorkFu?</p>
+                     <% Usetype.all.each do |usetype|%>
+                        <%= check_box_tag :usetype_ids, usetype.id, @user.usetypes.include?(usetype), :name => 'user[usetype_ids][]' %>
+                        <%= content_tag(:span, "",  :class => "styledCheck checked", :id => "jenia"+usetype.id.to_s) %> 
+                        <%= content_tag(:span, usetype.title, :class => "title") %>                   
+                     <%end%>
+                 </div>
+              </td>
+            </tr>
+          </table>
+         <p>Indavidual information</p>    
          <div >
-              <%=label_tag(:first_name, "First name") =%>
-              <%= text_field_tag(:first_name) %> 
+              <%=f.label :first_name %>
+              <%= f.text_field :first_name %> 
          </div>   
          <div >      
-              <%=label_tag(:last_name, "Last name") =%>
-              <%= text_field_tag(:last_name) %>
+              <%=f.label :last_name %>
+              <%= f.text_field :last_name %>
          </div>   
          <div>
-              <%=label_tag(:email, "E-mail") =%>
-              <%= text_field_tag(:email) %>
+              <%=f.label :email %>
+              <%= f.text_field :email %>
          </div>   
          <div>
-              <%=label_tag(:user_name, "Username/WorkFu URL") =%>
-              <%= text_field_tag(:user_name) %>
+              <%=f.label :username %>
+              <%= f.text_field :username %>
          </div>
    
          <div>
-              <%=label_tag(:personal_url, "Personal URL") =%>
-              <%= text_field_tag(:personal_url) %>
+              <%=f.label :personal_url %>
+              <%= f.text_field :personal_url %>
          </div>
    
          <div>
-              <%=label_tag(:location, "Location") =%>
-              <%= text_field_tag(:location) %>
+              <%=f.label :location %>
+              <%= f.text_field :location %>
          </div>
    
          <div >      
-              <%=label_tag(:micro_bio, "Micro Bio") =%>
-              <%= text_area_tag(:micro_bio) %>   
+              <%=f.label :micro_bio %>
+              <%= f.text_area :micro_bio %>
+              <span class="label label-info">0/160 characters.</span>  
          </div>
    
          <div >
-              <%=label_tag(:proffessional_bio, "Proffessional Bio") =%>
-              <%= text_area_tag "proffessional_bio", nil %>    
+              <%=f.label :profesional_bio %>
+              <%= f.text_area :profesional_bio %>    
          </div>   
-              <%= submit_tag("Update") %>
+              <%= f.submit("Update") %>
    <% end %>
-</section>
+</div>
 <div class="span6">
+  <table border="3px">
+            <tr>
+              <td>
+                <p style:"fomt-size:20px"><%=@user.first_name%> <%=@user.last_name%></p>
+              </td>
+            </tr>
+  </table>
 </div>
-</div>
+</section>
+
 </div>
 <%= render 'layouts/footer'%>
 </body>

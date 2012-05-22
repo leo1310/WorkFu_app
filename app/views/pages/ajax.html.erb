@@ -1,0 +1,10 @@
+<h1>Hello world!!!</h1>
+<div id="movies">
+ <%= render 'movie'%>
+</div> 
+<%=form_for Movie.new, :url => {:controller=>"pages", :action => "movie_new" }, :remote => true  do |f| %>
+<%= f.text_field :title %>
+<%= f.submit "Create" %>
+<%end%>
+
+		
