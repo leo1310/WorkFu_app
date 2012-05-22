@@ -10,7 +10,7 @@
             <p>Use the form below to edit and manage your personal details.</p>
        </div>   
    <section >
-   <%= form_for @user, :url => {:action => "update", :id => current_user.id } do |f|  %>
+   <%= form_for @user, :url => {:action => "update", :id => current_user.id } do |f|  %>          
           <table border="3px">
             <tr>
               <td>
@@ -69,21 +69,28 @@
          <div >      
               <%=f.label :micro_bio %>
               <%= f.text_area :micro_bio %>
-              <span class="label label-info">0/160 characters.</span>  
+              <p></p>
+              <span class="label label-info"><%=@user.micro_bio.size%>/160 characters.</span>  
          </div>
    
          <div >
               <%=f.label :profesional_bio %>
-              <%= f.text_area :profesional_bio %>    
+              <%= f.text_area :profesional_bio %>              
+              <span class="label label-info">Used 0/200 words.</span>    
          </div>   
               <%= f.submit("Update") %>
    <% end %>
 </div>
-<div class="span6">
+<div class="span6">  
   <table border="3px">
             <tr>
               <td>
                 <p style:"fomt-size:20px"><%=@user.first_name%> <%=@user.last_name%></p>
+                <%= form_for @user, :url => {:controller=>"navigatebars", :action => "update", :id => current_user.id } do |f| %>
+                <%= image_tag @user.avatar.url, :size => "128x128" %></br>
+                <%= f.file_field :avatar %></br>
+                <%= f.submit("Upload") %>
+                <% end %>
               </td>
             </tr>
   </table>

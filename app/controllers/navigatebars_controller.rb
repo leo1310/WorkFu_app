@@ -6,6 +6,7 @@ class NavigatebarsController < ApplicationController
 		
 	end	
 
+
 	def update_your_bio		
     @title = "update_your_bio"
 		session[:second_tab] = 1
@@ -34,9 +35,13 @@ class NavigatebarsController < ApplicationController
   end
 
   def update
+    #puts "xxx "*3
+    #puts "update"
+    #@user = User.create( params[:user] )
     @user = User.find(current_user.id)
     @user.update_attributes(params[:user])  
-    redirect_to :action => "update_your_bio"    
+    redirect_to :action => "update_your_bio"  
   end
+
 
 end
