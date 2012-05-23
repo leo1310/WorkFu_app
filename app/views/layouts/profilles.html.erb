@@ -37,7 +37,12 @@
                      <li><%= link_to "Preview your Profille", preview_your_profille_path %></li>
                 <%end%>
              </ul>
-         </div>
-         <%= yield %>
+             <section >
+                <% flash.each do |key, value| %>
+                <div class="alert alert-<%= key %>"><%= value %></div>
+                <% end %>
+                <%= yield %>
+      </section>
+         </div>         
    </header>
 </body>

@@ -7,8 +7,9 @@ Level 1 of column
        	<p>We're launching the full beta on the 21st of May. In the meantime please update & prepare your 'Smart Profile'.</p>
        </div>
            <div class="span6">
-            <%= image_tag @user.avatar.url, :size => "128x128" %>
-            <%=current_user.first_name%> <%=current_user.last_name%></br>            
+            <p style:"fomt-size:20px"><%=@user.first_name%> <%=@user.last_name%></p>
+            <%= image_tag @user.avatar.url, :size => "128x128" %>            
+                       
           </div>
            <%=link_to "go to AJAX", ajax_path%>
     </div>

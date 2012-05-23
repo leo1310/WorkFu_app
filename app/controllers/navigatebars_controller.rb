@@ -39,8 +39,13 @@ class NavigatebarsController < ApplicationController
     #puts "update"
     #@user = User.create( params[:user] )
     @user = User.find(current_user.id)
-    @user.update_attributes(params[:user])  
-    redirect_to :action => "update_your_bio"  
+    if @user.update_attributes(params[:user])
+        flash[:success] = "Your profile is update!"
+        redirect_to :action => "update_your_bio"  
+    else  
+        flash[:error] = "Error! Your profile is not update!"
+        redirect_to :action => "update_your_bio"   
+    end
   end
 
 
