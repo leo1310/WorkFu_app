@@ -19,7 +19,7 @@ class NavigatebarsController < ApplicationController
        session[:second_tab] = 2
   end
   
-  def add_other_networks
+  def add_other_networks    
   	@title = "Add other networks"
   	session[:second_tab] = 3
   end
