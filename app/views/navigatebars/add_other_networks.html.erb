@@ -8,7 +8,7 @@
 </head>
 
 <%= render 'layouts/navigate'%>
-<body class="hero-unit">
+<body class="hero-unit">	
 <div>
 <h1>Manage your Networks</h1>
 <p>You can add links and integrate other networks / services to your WorkFu profile. Click the icons to add or remove.</p>
@@ -20,25 +20,24 @@
 		<tr>
 			<td>
 				<a class="twitter" href="#" id="twitter">					
-					<span id="networks-1782" class="active"></span>
+					
 					<span class="img">						
 						<%= image_tag("networks/twitter.png", :alt => "twitter", :title => "twitter") %>			
 					</span>										
 				</a>		
 				<span class="text">Twitter</span>							
 			</td>
-			<td>
-				<a class="linkedin" href="#" id="linkedin">					
-					<span id="networks-8783" class="active"></span>
+			<td>				
+				<a class="linkedin" href="#" id="linkedin">										
 					<span class="img">
 						<%= image_tag("networks/linkedin.png", :alt => "linkedin", :title => "linkedin") %>			
 					</span>
-
-				</a>		
+				</a></br>		
 				<span class="text">LinkedIn</span>
 			</td>
 			<td>
 				<a class="zerply" href="#" id="zerply">					
+				<span id="zerply2" class=""></span>									
 					<span class="img">
 						<%= image_tag("networks/zerply.png", :alt => "zerply", :title => "zerply") %>			
 					</span>					
@@ -46,7 +45,8 @@
 				<span class="text">Zerply</span>				
 			</td>
 			<td>
-				<a class="dribbble" href="#" id="dribbble">					
+				<a class="dribbble" href="#" id="dribbble">
+				<span id="dribbble2" class=""></span>					
 					<span class="img">
 						<%= image_tag("networks/dribbble.png", :alt => "dribbble", :title => "dribbble") %>			
 					</span>					
@@ -80,7 +80,8 @@
 				<span class="text">Forrst</span>	
 			</td>			   
 			<td>
-				<a class="facebook" href="#" id="facebook">					
+				<a class="facebook" href="#" id="facebook">
+				<span id="facebook2" class=""></span>						
 					<span class="img">
 						<%= image_tag("networks/facebook.png", :alt => "facebook", :title => "facebook") %>			
 					</span>					
@@ -88,7 +89,8 @@
 				<span class="text">Facebook</span>	
 			</td>			
 			<td>
-				<a class="ffffound" href="#" id="ffffound">					
+				<a class="ffffound" href="#" id="ffffound">	
+				<span id="ffffound2" class=""></span>				
 					<span class="img">
 						<%= image_tag("networks/ffffound.png", :alt => "ffffound", :title => "ffffound") %>			
 					</span>					
@@ -104,7 +106,8 @@
 				<span class="text">Instagram</span>	
 			</td>
 			<td>
-				<a class="treehouse" href="#" id="treehouse">					
+				<a class="treehouse" href="#" id="treehouse">
+				<span id="treehouse2" class=""></span>					
 					<span class="img">
 						<%= image_tag("networks/treehouse.png", :alt => "treehouse", :title => "treehouse") %>			
 					</span>					
@@ -194,36 +197,112 @@
       var answer = confirm("Associate your Tumblr account and enable WorkFu to display useful information and statistics on your profile. Activate?");
         if(answer)        
         	window.location = "http://www.tumblr.com"        
-        });  
-    $("#zerply").click(function () {     
+        });
+
+    $("#zerply").click(function () {    	
+     var str = $('#zerply2').attr('class');
+     if(str != "active")
+     {
       var answer = prompt("Enter your Zerply username to add as a link on your profile. http://zerply.com/", "your username");
-        /*if(answer)        
-        	window.location = "http://www.tumblr.com" */
+        if((answer.length > 0)&&(answer != "your username"))
+        {        	
+        	$('#zerply2').attr('class', 'active');
+        	params["zerply"] = 1;
+        }
+     }
+     else
+     {
+     	var answer2 = confirm("Are you sure?");
+     	if(answer2)
+     	{
+     	     	$('#zerply2').attr('class', ' ');
+     	     	params("zerply") = 0;;
+     	     }
+     }
+
         });
-    $("#dribbble").click(function () {     
+
+    $("#dribbble").click(function () { 
+    var str = $('#dribbble2').attr('class');
+     if(str != "active")
+     {    
       var answer = prompt("Enter your Dribbble username to add as a link on your profile. http://dribbble.com/", "your username");
-        /*if(answer)        
-        	window.location = "http://www.tumblr.com" */
+        if((answer.length > 0)&&(answer != "your username"))
+        {        	
+        	$('#dribbble2').attr('class', 'active');
+        }
+    }
+    else
+     {
+     	var answer2 = confirm("Are you sure?");
+     	if(answer2)
+     	     	$('#dribbble2').attr('class', ' ');
+     }
         });
-    $("#facebook").click(function () {     
+
+    $("#facebook").click(function () { 
+    var str = $('#facebook2').attr('class');
+     if(str != "active")
+     {     
       var answer = prompt("Enter your Facebook username to add as a link on your profile. http://www.facebook.com/", "your username or id");
-        /*if(answer)        
-        	window.location = "http://www.tumblr.com" */
+        if((answer.length > 0)&&(answer != "your username or id"))
+        {        	
+        	$('#facebook2').attr('class', 'active');
+        }
+    }
+    else
+     {
+     	var answer2 = confirm("Are you sure?");
+     	if(answer2)
+     	     	$('#facebook2').attr('class', ' ');
+     }
         });
-    $("#ffffound").click(function () {     
+
+    $("#ffffound").click(function () {
+    var str = $('#ffffound2').attr('class');
+     if(str != "active")
+     {      
       var answer = prompt("Enter your FFFFound username to add as a link on your profile. http://ffffound.com/home/", "your username");
-        /*if(answer)        
-        	window.location = "http://www.tumblr.com" */
+        if((answer.length > 0)&&(answer != "your username"))
+        {        	
+        	$('#ffffound2').attr('class', 'active');
+        }
+    }
+    else
+     {
+     	var answer2 = confirm("Are you sure?");
+     	if(answer2)
+     	     	$('#ffffound2').attr('class', ' ');
+     }
         });
+
     $("#treehouse").click(function () {     
+    	var str = $('#treehouse2').attr('class');
+     if(str != "active")
+     { 
       var answer = prompt("Enter your Treehouse username (not your user id) and enable WorkFu to display useful information and statistics on your profile. http://teamtreehouse.com/", "your username");
-        /*if(answer)        
-        	window.location = "http://www.tumblr.com" */
-        });  
+        if((answer.length > 0)&&(answer != "your username"))
+        {        	
+        	$('#treehouse2').attr('class', 'active');
+        }
+    }
+    else
+     {
+     	var answer2 = confirm("Are you sure?");
+     	if(answer2)
+     	     	$('#treehouse2').attr('class', ' ');
+     }
+    }); 
+
+    $(document).ready(function () {
+    	//var result =params["zerply"];
+    if( result== 1)
+    	$('#zerply2').attr('class', 'active');
+
+}); 
 
 </script>
-<script src="/combres.axd/scripts-auth-networks/-79066152/" type="text/javascript">
-var ui={};(function(b){b.Emitter=a;function a(){this.callbacks={}}a.prototype.on=function(c,d){(this.callbacks[c]=this.callbacks[c]||[]).push(d);return this};a.prototype.once=function(c,d){var f=this;function e(){f.off(c,e);d.apply(this,arguments)}this.on(c,e);return this};a.prototype.off=function(d,e){var c=this.callbacks[d];if(!c){return this}if(1==arguments.length){delete this.callbacks[d];return this}var f=c.indexOf(e);c.splice(f,1);return this};a.prototype.emit=function(e){var c=[].slice.call(arguments,1),d=this.callbacks[e];if(d){for(var f=0,g=d.length;f<g;++f){d[f].apply(this,c)}}return this}})(ui);(function(c,d){var a;c.Dialog=b;c.dialog=function(g,f,e){switch(arguments.length){case 3:return new b({title:g,message:f,link:e});case 2:return new b({title:g,message:f});case 1:return new b({message:g})}};function b(e){ui.Emitter.call(this);e=e||{};this.template=d;this.el=$(this.template);this.render(e);if(a){a.hide()}if(b.effect){this.effect(b.effect)}a=this}b.prototype=new ui.Emitter;b.prototype.render=function(h){var e=this.el,j=h.title,g=h.message,f=h.link,i=this;e.find(".close").click(function(){i.emit("close");i.hide();return false});e.find("h1").text(j);if(!j){e.find("h1").remove()}if("string"==typeof g){e.find("p").text(g)}else{if(g){e.find("p").replaceWith(g.el||g)}}if(f!=null){e.find(".ok").attr("href",f)}setTimeout(function(){e.removeClass("hide")},0)};b.prototype.closable=function(){this.el.addClass("closable");return this};b.prototype.effect=function(e){this._effect=e;this.el.addClass(e);return this};b.prototype.modal=function(){this._overlay=ui.overlay();return this};b.prototype.overlay=function(){var e=this;this._overlay=ui.overlay({closable:true}).on("hide",function(){e.closedOverlay=true;e.hide()});return this};b.prototype.show=function(){this.emit("show");if(this._overlay){this._overlay.show();this.el.addClass("modal")}this.el.appendTo("body");this.el.css({marginLeft:-(this.el.width()/2)+"px"});return this};b.prototype.hide=function(e){var f=this;this.emit("hide");if(e){setTimeout(function(){f.hide()},e);return this}this.el.addClass("hide");if(this._effect){setTimeout(function(g){g.remove()},500,this)}else{f.remove()}if(this._overlay&&!f.closedOverlay){this._overlay.hide()}return this};b.prototype.remove=function(){this.el.remove();return this}})(ui,'<div id="dialog" class="hide">\n <div class="content">\n <h1>Title</h1>\n <a href="#" class="close">×</a>\n <p>Message</p>\n </div>\n</div>');(function(a,b){a.Overlay=c;a.overlay=function(d){return new c(d)};function c(d){ui.Emitter.call(this);var e=this;d=d||{};this.closable=d.closable;this.el=$(b);this.el.appendTo("body");if(this.closable){this.el.click(function(){e.hide()})}}c.prototype=new ui.Emitter;c.prototype.show=function(){this.emit("show");this.el.removeClass("hide");return this};c.prototype.hide=function(){var d=this;this.emit("hide");this.el.addClass("hide");setTimeout(function(){d.el.remove()},2000);return this}})(ui,'<div id="overlay" class="hide"></div>');(function(b,c){b.Confirmation=a;b.confirm=function(e,d){switch(arguments.length){case 2:return new a({title:e,message:d});case 1:return new a({message:e})}};function a(d){ui.Dialog.call(this,d)}a.prototype=new ui.Dialog;a.prototype.cancel=function(d){this.el.find(".cancel").text(d);return this};a.prototype.ok=function(d){this.el.find(".ok").text(d);return this};a.prototype.show=function(d){ui.Dialog.prototype.show.call(this);this.callback=d||function(){};return this};a.prototype.render=function(e){ui.Dialog.prototype.render.call(this,e);var f=this,d=$(c);this.el.addClass("confirmation");this.el.append(d);this.on("close",function(){f.emit("cancel");f.callback(false)});d.find(".cancel").click(function(){f.emit("cancel");f.callback(false);f.hide()});d.find(".ok").click(function(){f.emit("ok");f.callback(true);f.hide()})}})(ui,'<div class="actions">\n <button class="cancel">Cancel</button>\n <button class="ok main">Ok</button>\n</div>');(function(a,b){a.TwitterConfirmation=c;a.twitterconfirm=function(f,e,d){return new c({title:f,message:e,link:d})};function c(d){ui.Dialog.call(this,d)}c.prototype=new ui.Dialog;c.prototype.cancel=function(d){this.el.find(".cancel").text(d);return this};c.prototype.ok=function(d){this.el.find(".ok").text(d);return this};c.prototype.show=function(d){ui.Dialog.prototype.show.call(this);this.callback=d||function(){};return this};c.prototype.render=function(f){ui.Dialog.prototype.render.call(this,f);var g=this,e=f.link,d=$(b);this.el.addClass("confirmation");this.el.append(d);this.on("close",function(){g.emit("cancel");g.callback(false)});d.find(".cancel").click(function(){g.emit("cancel");g.callback(false);g.hide()});d.find(".ok").click(function(){g.emit("ok");g.callback(true);g.hide()});d.find("a.ok").attr("href",e)}})(ui,'<div class="actions">\n <button class="cancel">Cancel</button>\n <a href="" class="ok main" target="_blank">Ok</a>\n</div>');(function(b,c){b.ColorPicker=a;function d(i,h,f){return"rgb("+i+", "+h+", "+f+")"}function e(j,i,h,f){return"rgba("+j+", "+i+", "+h+", "+f+")"}function a(){ui.Emitter.call(this);this._colorPos={};this.el=$(c);this.main=this.el.find(".main").get(0);this.spectrum=this.el.find(".spectrum").get(0);$(this.main).bind("selectstart",function(f){f.preventDefault()});$(this.spectrum).bind("selectstart",function(f){f.preventDefault()});this.hue(d(255,0,0));this.spectrumEvents();this.mainEvents();this.w=180;this.h=180;this.render()}a.prototype=new ui.Emitter;a.prototype.size=function(f){return this.width(f).height(f)};a.prototype.width=function(f){this.w=f;this.render();return this};a.prototype.height=function(f){this.h=f;this.render();return this};a.prototype.spectrumEvents=function(){var h=this,f=$(this.spectrum),g;function i(k){var j=h.hueAt(k.offsetY-4);h.hue(j.toString());h.emit("change",j);h._huePos=k.offsetY;h.render()}f.mousedown(function(j){g=true;i(j)});f.mousemove(function(j){if(g){i(j)}});f.mouseup(function(){g=false})};a.prototype.mainEvents=function(){var h=this,f=$(this.main),g;function i(k){var j=h.colorAt(k.offsetX,k.offsetY);h.color(j.toString());h.emit("change",j);h._colorPos=k;h.render()}f.mousedown(function(j){g=true;i(j)});f.mousemove(function(j){if(g){i(j)}});f.mouseup(function(){g=false})};a.prototype.colorAt=function(g,h){var f=this.main.getContext("2d").getImageData(g,h,1,1).data;return{r:f[0],g:f[1],b:f[2],toString:function(){return d(this.r,this.g,this.b)}}};a.prototype.hueAt=function(g){var f=this.spectrum.getContext("2d").getImageData(0,g,1,1).data;return{r:f[0],g:f[1],b:f[2],toString:function(){return d(this.r,this.g,this.b)}}};a.prototype.color=function(f){if(0==arguments.length){return this._color}this._color=f;return this};a.prototype.hue=function(f){if(0==arguments.length){return this._hue}this._hue=f;return this};a.prototype.render=function(f){f=f||{};this.renderMain(f);this.renderSpectrum(f)};a.prototype.renderSpectrum=function(l){var i=this.el,f=this.spectrum,g=f.getContext("2d"),m=this._huePos,n=this.w*0.12,k=this.h;f.width=n;f.height=k;var j=g.createLinearGradient(0,0,0,k);j.addColorStop(0,d(255,0,0));j.addColorStop(0.15,d(255,0,255));j.addColorStop(0.33,d(0,0,255));j.addColorStop(0.49,d(0,255,255));j.addColorStop(0.67,d(0,255,0));j.addColorStop(0.84,d(255,255,0));j.addColorStop(1,d(255,0,0));g.fillStyle=j;g.fillRect(0,0,n,k);if(!m){return}g.fillStyle=e(0,0,0,0.3);g.fillRect(0,m,n,1);g.fillStyle=e(255,255,255,0.3);g.fillRect(0,m+1,n,1)};a.prototype.renderMain=function(l){var i=this.el,f=this.main,g=f.getContext("2d"),n=this.w,k=this.h,o=(this._colorPos.offsetX||n)+0.5,p=(this._colorPos.offsetY||0)+0.5;f.width=n;f.height=k;var j=g.createLinearGradient(0,0,n,0);j.addColorStop(0,d(255,255,255));j.addColorStop(1,this._hue);g.fillStyle=j;g.fillRect(0,0,n,k);j=g.createLinearGradient(0,0,0,k);j.addColorStop(0,e(255,255,255,0));j.addColorStop(1,e(0,0,0,1));g.fillStyle=j;g.fillRect(0,0,n,k);var m=10;g.save();g.beginPath();g.lineWidth=1;g.strokeStyle=e(0,0,0,0.5);g.arc(o,p,m/2,0,Math.PI*2,false);g.stroke();g.strokeStyle=e(255,255,255,0.5);g.arc(o,p,m/2-1,0,Math.PI*2,false);g.stroke();g.beginPath();g.restore()}})(ui,'<div class="color-picker">\n <canvas class="main"></canvas>\n <canvas class="spectrum"></canvas>\n</div>');(function(a,b){var c;a.Notification=d;$(function(){c=$('<ul id="notifications">');c.appendTo("body")});a.notify=function(g,f){switch(arguments.length){case 2:return new d({title:g,message:f}).show().hide(4000);case 1:return new d({message:g}).show().hide(4000)}};function e(f){return function(h,g){return a.notify.apply(this,arguments).type(f)}}a.info=a.notify;a.warn=e("warn");a.error=e("error");function d(f){f=f||{};this.template=b;this.el=$(this.template);this.render(f);if(d.effect){this.effect(d.effect)}}d.prototype.render=function(h){var f=this.el,j=h.title,g=h.message,i=this;f.find(".close").click(function(){i.hide();return false});f.find("h1").text(j);if(!j){f.find("h1").remove()}if("string"==typeof g){f.find("p").text(g)}else{if(g){f.find("p").replaceWith(g.el||g)}}setTimeout(function(){f.removeClass("hide")},0)};d.prototype.closable=function(){this.el.addClass("closable");return this};d.prototype.effect=function(f){this._effect=f;this.el.addClass(f);return this};d.prototype.show=function(){this.el.appendTo(c);return this};d.prototype.type=function(f){this._type=f;this.el.addClass(f);return this};d.prototype.sticky=function(){return this.hide(0).closable()};d.prototype.hide=function(f){var g=this;if("number"==typeof f){clearTimeout(this.timer);if(!f){return this}this.timer=setTimeout(function(){g.hide()},f);return this}this.el.addClass("hide");if(this._effect){setTimeout(function(h){h.remove()},500,this)}else{g.remove()}return this};d.prototype.remove=function(){this.el.remove();return this}})(ui,'<li class="notification hide">\n <div class="content">\n <h1>Title</h1>\n <a href="#" class="close">×</a>\n <p>Message</p>\n </div>\n</li>');(function(a,b){a.SplitButton=c;function c(d){ui.Emitter.call(this);this.el=$(b);this.events();this.render({label:d});this.state="hidden"}c.prototype=new ui.Emitter;c.prototype.events=function(){var e=this,d=this.el;d.find(".button").click(function(f){f.preventDefault();e.emit("click",f)});d.find(".toggle").click(function(f){f.preventDefault();e.toggle()})};c.prototype.toggle=function(){return"hidden"==this.state?this.show():this.hide()};c.prototype.show=function(){this.state="visible";this.emit("show");return this};c.prototype.hide=function(){this.state="hidden";this.emit("hide");return this};c.prototype.render=function(f){var f=f||{},d=this.el.find(".button"),e=f.label;if("string"==e){d.text(e)}else{d.text("").append(e)}return this}})(ui,'<div class="split-button">\n <a class="button" href="#">Action</a>\n <a class="toggle" href="#"><span></span></a>\n</div>');(function(a,b){a.Menu=c;a.menu=function(){return new c};function c(){var e=this;ui.Emitter.call(this);this.items={};this.el=$(b).hide().appendTo("body");$("html").click(function(){e.hide()})}c.prototype=new ui.Emitter;c.prototype.add=function(h,f){var g=this,e=$('<li><a href="#">'+h+"</a></li>").addClass(d(h)).appendTo(this.el).click(function(i){i.preventDefault();i.stopPropagation();g.hide();g.emit(h);f&&f()});this.items[h]=e;return this};c.prototype.remove=function(f){var e=this.items[f];if(!e){throw new Error('no menu item named "'+f+'"')}this.emit("remove",f);e.remove();delete this.items[f];return this};c.prototype.has=function(e){return !!this.items[e]};c.prototype.moveTo=function(e,f){this.el.css({top:f,left:e});return this};c.prototype.show=function(){this.emit("show");this.el.show();return this};c.prototype.hide=function(){this.emit("hide");this.el.hide();return this};function d(e){return e.toLowerCase().replace(/ +/g,"-").replace(/[^a-z0-9-]/g,"")}})(ui,'<div class="menu">\n</div>');(function(b,c){b.Card=a;b.card=function(e,d){return new a(e,d)};function a(e,d){ui.Emitter.call(this);this._front=e||$("<p>front</p>");this._back=d||$("<p>back</p>");this.template=c;this.render()}a.prototype=new ui.Emitter;a.prototype.front=function(d){this._front=d;this.render();return this};a.prototype.back=function(d){this._back=d;this.render();return this};a.prototype.flip=function(){this.emit("flip");this.el.toggleClass("flipped");return this};a.prototype.effect=function(d){this.el.addClass(d);return this};a.prototype.render=function(e){var f=this,d=this.el=$(this.template);d.find(".front").empty().append(this._front.el||$(this._front));d.find(".back").empty().append(this._back.el||$(this._back));d.click(function(){f.flip()})}})(ui,'<div class="card">\n <div class="wrapper">\n <div class="face front">1</div>\n <div class="face back">2</div>\n </div>\n</div>');(function(a,b){a.Image=c;a.image=function(d){return new c({src:d})};function c(d){ui.Emitter.call(this);d=d||{};this.template=b;this.el=$(this.template);this.render(d)}c.prototype=new ui.Emitter;c.prototype.modal=function(){this._overlay=ui.overlay();return this};c.prototype.overlay=function(){var d=this;this._overlay=ui.overlay({closable:true}).on("hide",function(){d.closedOverlay=true;d.hide()});return this};c.prototype.show=function(){this.emit("show");if(this._overlay){this._overlay.show();this.el.addClass("modal")}this.el.appendTo("body");this.el.css({marginLeft:-(400/2)+"px"});return this};c.prototype.hide=function(d){var e=this;this.emit("hide");this.el.addClass("hide");e.remove();if(this._overlay&&!e.closedOverlay){this._overlay.hide()}return this};c.prototype.remove=function(){this.el.remove();return this};c.prototype.render=function(e){var f=this,d=this.el=$(this.template),g=e.src;d.find("img").attr("src",g)}})(ui,'<div id="dialog" class="image">\n<div class="content">\n<img>\n</div>\n</div>');(function(a,b){a.Workfu=c;a.workfu=function(d){return new c({html:d})};function c(d){ui.Emitter.call(this);d=d||{};this.template=b;this.el=$(this.template);this.render(d)}c.prototype=new ui.Emitter;c.prototype.modal=function(){this._overlay=ui.overlay();return this};c.prototype.overlay=function(){var d=this;this._overlay=ui.overlay({closable:true}).on("hide",function(){d.closedOverlay=true;d.hide()});return this};c.prototype.show=function(){this.emit("show");if(this._overlay){this._overlay.show();this.el.addClass("modal")}this.el.appendTo("body");this.el.css({marginLeft:-(this.el.width()/2)+"px"});return this};c.prototype.hide=function(d){var e=this;this.emit("hide");this.el.addClass("hide");e.remove();if(this._overlay&&!e.closedOverlay){this._overlay.hide()}return this};c.prototype.remove=function(){this.el.remove();return this};c.prototype.render=function(f){var g=this,d=this.el=$(this.template),e=f.html;d.find(".closedown").click(function(){g.emit("close");g.hide();return false});d.find(".talent").click(function(){g.emit("close");g.hide()})}})(ui,'<div id="dialog" class="confirmation modal"><span class="tick"></span>\n<div class="content">\n<h1>Opportunity successfully published</h1>\n<p>To get you started, we\'ve suggested some talent for you, please take a look. You can approach them from here, if you feel any are appropriate.</p>\n</div>\n<div class="actions"><a href="#talent" class="talent">Show me the suggested Talent!</a><a href="#" class="closedown">Continue</a>\n</div>\n</div>');(function(a,b){a.RecommendTwitter=c;a.recommendtwitter=function(e,f,h,d,g){return new c({name:e,twitterid:f,username:h,id:d,url:g})};function c(d){ui.Emitter.call(this);d=d||{};this.template=b;this.el=$(this.template);this.render(d)}c.prototype=new ui.Emitter;c.prototype.modal=function(){this._overlay=ui.overlay();return this};c.prototype.overlay=function(){var d=this;this._overlay=ui.overlay({closable:true}).on("hide",function(){d.closedOverlay=true;d.hide()});return this};c.prototype.show=function(){this.emit("show");if(this._overlay){this._overlay.show();this.el.addClass("modal")}this.el.appendTo("body");this.el.css({marginLeft:-(this.el.width()/2)+"px"});return this};c.prototype.hide=function(d){var e=this;this.emit("hide");this.el.addClass("hide");e.remove();if(this._overlay&&!e.closedOverlay){this._overlay.hide()}return this};c.prototype.remove=function(){this.el.remove();return this};c.prototype.render=function(h){var i=this,d=this.el=$(this.template),g=h.name,j=h.twitterid,l=h.username,f=h.id,k=h.url;d.find(".closedown").click(function(){i.emit("close");i.hide();return false});d.find(".twitter").click(function(){i.emit("close");displayGlobalLoader();$.ajax({type:"POST",url:"/json/opportunity/recommendconfirm",data:"id="+f+"&twitterid="+j+"&workfuid=0",timeout:8000,async:true,success:function(m){removeGlobalLoader();d.find("div.content h1").html("Thank you!");d.find("div.content p").html("Your recommendation has been logged");d.find("div.actions a.twitter").hide();d.find("div.actions a.closedown").text("Close")},error:function(n,m){removeGlobalLoader()}})});var e="https://twitter.com/share?url=https://workfu.com"+k+"&text="+escape("@"+l+" I've just recommended you for this opportunity, if you sign-up you can accept or decline.")+"&hashtags=workfu&related=workfu";d.find("div.content p").html(d.find("div.content p").html().replace("{Name}",g));d.find("div.actions a.twitter").attr("href",e)}})(ui,'<div id="dialog" class="confirmation modal">\n<div class="content">\n<h1>Confirm your Recommendation</h1>\n<p>{Name} is not currently using WorkFu, would you like to invite them via Twitter? They can accept your recommendation once they have signed up.</p>\n</div>\n<div class="actions"><a href="#" class="closedown">Cancel</a>\n<a href="#" class="twitter ok" target="_blank">Confirm &amp; Invite via Twitter</a></div>\n</div>');jQuery(function(a){new WorkFuAuth.init()});var WorkFuAuth={vars:{active:null},Templates:{LinkedIn:'<div class="network integrated" id="new"><div><p>Associate your LinkedIn account and enable WorkFu to display useful information and statistics on your profile.</p><a href="#" class="cancel"></a><a href="/networks/auth/linkedin" class="activate">Activate</a></div></div>',GitHub:'<div class="network integrated" id="new"><div><p>Associate your GitHub account and enable WorkFu to display useful information and statistics on your profile.</p><a href="#" class="cancel"></a><a href="/networks/auth/github" class="activate">Activate</a></div></div>',Forrst:'<div class="network integrated" id="new"><div><p>Associate your Forrst account and enable WorkFu to display useful information and statistics on your profile.</p><a href="#" class="cancel"></a><a href="/networks/auth/forrst" class="activate">Activate</a></div></div>',Instagram:'<div class="network integrated" id="new"><div><p>Associate your Instagram account and enable WorkFu to display useful information and statistics on your profile.</p><a href="#" class="cancel"></a><a href="/networks/auth/instagram" class="activate">Activate</a></div></div>',Stackoverflow:'<div class="network integrated" id="new"><div><p>Associate your Stackoverflow (Stackexchange) account and enable WorkFu to display useful information and statistics on your profile.</p><a href="#" class="cancel"></a><a href="/networks/auth/stackexchange" class="activate">Activate</a></div></div>',Treehouse:'<div class="network" id="new"><div><p>Enter your Treehouse username (not your user id) and enable WorkFu to display useful information and statistics on your profile.</p><div class="form"><span>http://teamtreehouse.com/</span><input type="text" placeholder="your username" id="NetworkLink" maxlength="50" data-network="http://teamtreehouse.com/"></span><a href="#" class="cancel"></a><a href="#" class="activate">Add to profile</a></div></div>',Zerply:'<div class="network" id="new"><div><p>Enter your Zerply username to add as a link on your profile.</p><div class="form"><span>http://zerply.com/</span><input type="text" placeholder="your username" id="NetworkLink" maxlength="50" data-network="http://zerply.com/"></span><a href="#" class="cancel"></a><a href="#" class="activate">Add to profile</a></div></div>',Dribbble:'<div class="network" id="new"><div><p>Enter your Dribbble username to add as a link on your profile.</p><div class="form"><span>http://dribbble.com/</span><input type="text" placeholder="your username" id="NetworkLink" maxlength="50" data-network="http://dribbble.com/"></span><a href="#" class="cancel"></a><a href="#" class="activate">Add to profile</a></div></div>',Facebook:'<div class="network" id="new"><div><p>Enter your Facebook username / id to add as a link on your profile.</p><div class="form"><span>http://www.facebook.com/</span><input type="text" placeholder="your username or id" id="NetworkLink" maxlength="50" data-network="http://www.facebook.com/"></span><a href="#" class="cancel"></a><a href="#" class="activate">Add to profile</a></div></div>',FFFFound:'<div class="network" id="new"><div><p>Enter your FFFFound username to add as a link on your profile.</p><div class="form"><span>http://ffffound.com/home/</span><input type="text" placeholder="your username" id="NetworkLink" maxlength="50" data-network="http://ffffound.com/home/"><a href="#" class="cancel"></a><a href="#" class="activate">Add to profile</a></div></div>',Tumblr:'<div class="network integrated" id="new"><div><p>Associate your Tumblr account and enable WorkFu to display useful information and statistics on your profile.</p><a href="#" class="cancel"></a><a href="/networks/auth/tumblr" class="activate">Activate</a></div></div>'},init:function(){$("div.networks").delay(600).fadeIn(100);var a=$("div.networks a").size();$("div.networks a:.twitter").bind("click",function(){return false});$("div.networks a").each(function(b,c){$(this).bind("click",function(){if($(this).hasClass("disabled")||$(this).hasClass("off")){return false}if($(this).hasClass("twitter")){return false}if($(this).children("span.active").length>0){var g=$(this).children("span.text").text();var d=$(this);new ui.Confirmation({title:"Remove "+g,message:"Are you sure?"}).ok("Confirm").overlay().show(function(i){if(i){d.children("span.active").addClass("pending");var h=d.children("span.active").attr("id");WorkFuAuth.Remove(h)}});return false}var e=$(this);var f=$(this).children("span.text").text().toLowerCase();if(WorkFuAuth.vars.active===f){WorkFuAuth.vars.active=null;return false}switch(f){case"linkedin":displayIntegrated(WorkFuAuth.Templates.LinkedIn);break;case"instagram":displayIntegrated(WorkFuAuth.Templates.Instagram);break;case"github":displayIntegrated(WorkFuAuth.Templates.GitHub);break;case"forrst":displayIntegrated(WorkFuAuth.Templates.Forrst);break;case"stackoverflow":displayIntegrated(WorkFuAuth.Templates.Stackoverflow);break;case"treehouse":displayLink(WorkFuAuth.Templates.Treehouse,f,e);break;case"zerply":displayLink(WorkFuAuth.Templates.Zerply,f,e);break;case"dribbble":displayLink(WorkFuAuth.Templates.Dribbble,f,e);break;case"facebook":displayLink(WorkFuAuth.Templates.Facebook,f,e);break;case"ffffound":displayLink(WorkFuAuth.Templates.FFFFound,f,e);break;case"tumblr":displayIntegrated(WorkFuAuth.Templates.Tumblr);break}WorkFuAuth.vars.active=f;$("html,body").animate({scrollTop:$("#new").offset().top},800);return false})})},AddLink:function(b,c,a){displayGlobalLoader();setTimeout(function(){$.ajax({type:"POST",url:"/json/networks/addlink",data:"link="+escape(b)+"&Provider="+c,timeout:8000,async:true,success:function(d){checkHandleAjaxError(d);a.children("span.pending").removeClass("pending").attr("id","network-"+d);removeGlobalLoader()},error:function(e,d){a.children("span.active").remove();removeGlobalLoader();handleGlobalAjaxError("Sorry, something went wrong &mdash; your network was not saved.")}})},500)},Remove:function(a){displayGlobalLoader();$.ajax({type:"POST",url:"/json/networks/removelink",data:"id="+a,timeout:8000,async:true,success:function(b){checkHandleAjaxError(b);$("span#"+a).fadeOut(300,function(){$(this).remove()});removeGlobalLoader()},error:function(c,b){$("span#"+a).removeClass("pending");removeGlobalLoader();handleGlobalAjaxError("Sorry, something went wrong &mdash; your network was not removed.")}})}};function disable(a){$("div.networks > a").css("opacity",0.03)}function enable(){$("div.networks > a").removeAttr("style");$("div.networks > a:not(.off)").removeClass("disabled")}function displayIntegrated(a){$("div.networks").append(a);$("div.networks > a").addClass("disabled");$("div.networks > a").animate({opacity:0.04},300,function(){$("div.network").slideDown(200,function(){$("a.cancel").unbind("click").bind("click",function(){$("div.network").slideUp(200,function(){$(this).remove();WorkFuAuth.vars.active=null;enable()});return false})})})}function displayLink(c,b,a){$("div.networks").append(c);$("div.networks > a").addClass("disabled");$("div.networks > a").animate({opacity:0.04},300,function(){$("div.network").slideDown(200,function(){$("a.cancel").unbind("click").bind("click",function(){$("div.network").slideUp(200,function(){$(this).remove();WorkFuAuth.vars.active=null;enable()});return false});$("a.activate").unbind("click").bind("click",function(){var d=$("input#NetworkLink").val();if(d.length>0){$("div.network").slideUp(200,function(){$(this).remove();WorkFuAuth.vars.active=null;enable();a.prepend('<span class="active pending"></span>');WorkFuAuth.AddLink(d.toLowerCase(),b,a)})}return false})})})};
-</script>
+
 </body>
-<%= render 'layouts/footer'%>        
+<%= render 'layouts/footer'%>   
+</html>     

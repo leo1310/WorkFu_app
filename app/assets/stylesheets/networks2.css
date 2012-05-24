@@ -21,9 +21,9 @@ div.networks a span.active {
     background: url("networks/tickcross.png") no-repeat scroll 0 0 transparent;
     display: block;
     height: 41px;
-    position: absolute;
-    right: -15px;
-    top: -15px;
+    position: relative;
+    left: 130px;
+    top:-100px;     
     width: 41px;
 }
 div.networks a:hover span.active {
@@ -33,7 +33,7 @@ div.networks a:hover span.active.pending, div.networks a span.active.pending {
     -moz-animation-duration: 0.4s;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: step-start;
-    background: url("/content/images/networks/loader.png") no-repeat scroll 50% 50% transparent;
+    background: url("networks/loader.png") no-repeat scroll 50% 50% transparent;
 }
 div.networks a.twitter:hover span.active {
     background-position: 0 0;
@@ -52,7 +52,7 @@ div.networks a span.img {
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
     display: inline-block;
-    margin: 0 0 10px;
+    margin: 0px 0 10px;
 }
 div.networks a:hover span.img {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
@@ -61,7 +61,7 @@ div.networks a.twitter span.img {
     background: none repeat scroll 0 0 #42C8F4;
 }
 div.networks a.linkedin span.img {
-    background: none repeat scroll 0 0 #007FBA;
+    background: none repeat scroll 0 0px #007FBA;
 }
 div.networks a.zerply span.img {
     background: none repeat scroll 0 0 #9DBC7A;
@@ -255,7 +255,7 @@ div.networks a:hover span.active.pending, div.networks a span.active.pending {
     background-attachment: scroll;
     background-clip: border-box;
     background-color: transparent;
-    background-image: url("/content/images/networks/loader.png");
+    background-image: url("networks/loader.png");
     background-origin: padding-box;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -346,11 +346,11 @@ div.networks a span.active {
     background-color: transparent;
     background-image: url("networks/tickcross.png");
     background-origin: padding-box;
-    background-position: 0 0;
+    background-position: 10 0;
     background-repeat: no-repeat;
     background-size: 21px 45px;
     height: 21px;
-    position: absolute;
+    position: relative;
     right: -7px;
     top: -7px;
     width: 21px;
@@ -374,4 +374,39 @@ div.networks div.network {
 div.networks div.network a.cancel {
     background-image: url("/content/images/retina/cross-networks.png");
     background-size: 15px 36px;
+}
+
+a.zerply span.active
+{
+    display: block;
+    position: relative;
+    margin: -17px;
+}
+
+a.dribbble span.active
+{
+    display: block;
+    position: relative;
+    margin: -17px;
+}
+
+a.treehouse span.active
+{
+    display: block;
+    position: relative;
+    margin: -17px;
+}
+
+a.facebook span.active
+{
+    display: block;
+    position: relative;
+    margin: -17px;
+}
+
+a.ffffound span.active
+{
+    display: block;
+    position: relative;
+    margin: -17px;
 }

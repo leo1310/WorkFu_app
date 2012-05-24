@@ -11,7 +11,7 @@
             <p>Use the form below to edit and manage your personal details.</p>
        </div>   
    <section >
-   <%= form_for @user, :url => {:action => "update", :id => current_user.id } do |f|  %>          
+   <%= form_for @user, :url => {:action => "update", :id => current_user.id } do |f|  %>                    
           <table border="3px">
             <tr>
               <td>
@@ -70,13 +70,13 @@
          <div >      
               <%=f.label :micro_bio %>
               <%= f.text_area :micro_bio, :size => "55x5", :id => "micro_bio" %>              
-              <span class="label label-info"><t><%=@user.micro_bio.size%></t>/160 characters.</span>  
+              <span class="label label-info"><t></t>/160 characters.</span>  
          </div>         
    
          <div >
               <%=f.label :profesional_bio %>
               <%= f.text_area :profesional_bio, :id => "profesional_bio", :cols => 55, :rows => 5 %>              
-              <span class="label label-info">Used <f><%=@user.profesional_bio.split(" ").size%></f>/200 words.</span>    
+              <span class="label label-info">Used <f></f>/200 words.</span>    
          </div>   
               <%= f.submit("Update") %>
    <% end %>
@@ -111,6 +111,15 @@
 
           $("f").text(str.split(" ").length);
         });
+    $(document).ready(function () {
+      var str = $("#micro_bio").val();
+      var str2 = $("#profesional_bio").val();          
+      $("t").text(str.length);
+      if(str2.length == 0)
+          $("f").text(0);
+      else
+          $("f").text(str2.split(" ").length);
+});
 
     
 
